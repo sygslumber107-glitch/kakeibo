@@ -1,1010 +1,3 @@
-
-あなたは優秀な家計簿です。
-私は貯蓄が苦手なのですが、決まった予算で生活するために手伝っていただけませんか？
-例えば使った金額と項目を簡単に入れられるようにして、その月のその項目の平均を算出してくれれば私も使いすぎてるなというのがわかるので、どうでしょう。例えば昼食は1日平均600円でいきたく、毎日昼食の金額入れると現在の平均出してくれれば使いすぎてるななどすぐわかります。
-必要な情報あればお伝えします。方法もこの方法で良いですか？
-月の予算は月初にお伝えします。
-
-もっと表示
-5月1日
-いいアイデアですね！インタラクティブな家計簿アプリを作りましょう。
-
-確認させてください：
-
-この方針でよいですか？
-
-支出を入力 → カテゴリ別に記録
-各カテゴリの「1日平均」をリアルタイム表示
-目標単価（例：昼食600円/日）と比較して、超えてたら警告
-月予算を月初に設定 → 残額も表示
-あと少しだけ教えてください👇
-
-
-Reading frontend design skill
-Reading frontend design skill
-ありがとうございます！全カテゴリ＋ブラウザ保存で作りますね。データが次回も残るよう設計します。
-
-
-ファイルを作成しました, ファイルを読み取りました
-ファイルを作成しました, ファイルを読み取りました
-できました！こんな機能が入っています：
-
-基本操作
-
-カテゴリ（昼食・夕食・日用品・交通費・娯楽・その他）をタップ → 金額入力 → ＋ボタン
-メモも任意で入力できます
-自動で計算
-
-各カテゴリの「1日平均」をリアルタイム表示
-目標金額と比較して 🟢好調 / 🟡もう少し / 🔴オーバー を色で表示
-予算管理
-
-「月予算を設定」で今月の総予算を入力 → 残額と消費バーが表示
-右下「🎯 目標設定」でカテゴリごとの1日目標を変更できます（昼食はデフォルト600円にしてあります）
-データ保存
-
-ブラウザに保存されるので、次回開いても記録が残ります
-月バッジをタップすると先月・翌月に切り替えられます
-月予算はいつでも変更可能です。使ってみてフィードバックがあれば調整しますね！
-
-
-Kakeibo
-コード · HTML 
-Q: よく使うカテゴリはどれですか？（複数選択可）
-回答: 昼食、夕食・外食、交通費、娯楽・趣味
-
-Q: データはどこに保存しますか？
-回答: ブラウザに保存（次回も残る）
-
-5月1日
-ありがとうございます！選択いただいたカテゴリを優先表示させつつ、日用品とその他を下に追いやる形で調整しましょうか？
-
-それとも今のアプリをそのまま使ってみて、気になった点があれば教えてもらう形でも大丈夫です。どうしますか？
-
-それぞれの項目の予算を入れる機能と、項目を増やしたり減らしたりする機能、も追加して欲しいです。
-あとはアクセスしやすかして欲しいのですが、良い方法ありますか。
-個人的にはClaude上ですぐ入力できるようにしたいです。
-
-5月1日
-いい要望ですね！まず2点追加して改善版を作ります。
-
-アクセスについてですが、Claude上でいつでも開けるようにするには：
-
-「プロジェクト」機能を使うのが一番おすすめです。 Claudeのプロジェクトを作って、そこにこの会話を置いておくと、サイドバーからすぐアクセスできます。アプリを開いたらすぐ入力、という流れが作れます。
-
-では改善版を作ります！
-
-
-2個のファイルを作成しました, ファイルを表示しました, コマンドを実行しました
-2個のファイルを作成しました, ファイルを表示しました, コマンドを実行しました
-アップデート版です！追加した機能：
-
-新機能①　カテゴリごとの予算設定
-
-各カテゴリに「1日の目標金額」と「月予算（上限）」を個別に設定できます
-昼食はデフォルトで目標600円/日・月予算13,000円にしてあります
-新機能②　カテゴリの追加・削除・編集
-
-右上の⚙️ボタン → カテゴリ管理から、好きなカテゴリを追加できます
-アイコンも絵文字から選択可能
-不要なカテゴリは削除できます（記録データは残ります）
-アクセスをよくする方法について補足です：
-
-一番おすすめ：Claudeのプロジェクト機能
-
-左サイドバーの「＋ New Project」でプロジェクト作成
-このHTMLファイルをダウンロードしてブックマークに登録
-プロジェクト内でいつでもこの会話に戻れます
-さらに手軽にするなら：
-
-このHTMLファイルをダウンロードして、スマホのホーム画面に追加（ブラウザで開いてから「ホーム画面に追加」）するとアプリのように使えます
-使ってみて気になる点があればお知らせください！
-
-
-Kakeibo
-コード · HTML 
-レシートの写真から読み取る機能とかも追加可能ですか？
-
-5月1日
-可能です！カメラやアルバムからレシートを撮影・選択すると、AIが金額・カテゴリ・店名を自動読み取りして入力してくれる機能を追加できます。
-
-Anthropic APIを使って画像解析するので、精度も高いです。今の家計簿アプリにそのまま組み込みましょうか？
-
-では「金額＋カテゴリ＋店名メモ」で作ります！読み取り後に確認・修正もできるようにしますね。
-
-
-ファイルを表示しました, コマンドを実行しました, ファイルを作成しました
-ファイルを表示しました, コマンドを実行しました, ファイルを作成しました
-レシート読み取り機能を追加しました！
-
-使い方
-
-上部の「📷 レシートを読み取る」をタップ
-カメラで撮影 or アルバムから選択
-AIが自動で「金額・カテゴリ・店名」を読み取り
-内容を確認・修正して「登録する」
-読み取り後に編集できるので、間違っていてもすぐ直せます。
-
-ひとつ注意点として、このHTMLファイルをダウンロードして直接ブラウザで開いて使う形になります。Claude上のプレビューではAPIキーの関係でレシート読み取りは動作しません。ダウンロードしたファイルで使うと全機能が使えます。
-
-他に追加したい機能があればお気軽にどうぞ！
-
-
-Kakeibo
-コード · HTML 
-Q: レシート読み取りで何を自動入力してほしいですか？
-回答: 金額＋カテゴリ＋店名メモ
-
-5月1日
-承知しました！先ほど作った版にすでに「金額＋カテゴリ自動分類＋店名メモ」が全部入っています。
-
-ダウンロードして試してみてください。使ってみて気になる点があればお知らせください！
-
-あと予算を毎月わざわざ設定しないように、デフォルト設定の登録設定と、一日いくらを設定すると自動でその月の予算が計算される機能と、逆に予算を入れると1日平均いくら使えるかを自動で計算してくれる機能もつけることは可能ですか？
-
-5月1日
-もちろん可能です！全部まとめて追加しますね。
-
-追加する機能：
-
-デフォルト予算：一度設定したら毎月自動適用
-1日いくら → 月予算を自動計算（日数×入力額）
-月予算 → 1日いくら使えるかを自動計算（双方向で連動）
-
-コマンドを実行しました, ファイルを作成しました, ファイルを読み取りました
-コマンドを実行しました, ファイルを作成しました, ファイルを読み取りました
-追加しました！「🎯 予算を設定」を開くとこんな感じで使えます：
-
-1日 → 月予算を自動計算
-
-「1日5,000円」と入れると → その月の日数×5,000円の月予算を自動表示
-「この月予算で設定」ボタンで即反映
-月予算 → 1日いくら使えるか自動計算
-
-「150,000円」と入れると → 150,000 ÷ 日数 = 1日あたり何円かを自動表示
-こちらも「設定」ボタン1タップで完了
-デフォルト予算（毎月自動適用）
-
-「毎月このデフォルト予算を使う」トグルをON
-翌月以降は月初に自動で同じ予算が設定されます
-ヘッダーに「デフォルト適用中」バッジも表示
-他に気になる点があればどうぞ！
-
-
-Kakeibo
-コード · HTML 
-アイコンの数を増やしたいです。
-🏌️、🍺らへんは欲しいですね。あと⚾️とか？
-
-5月1日
-すぐ追加しますね！
-
-
-コマンドを実行しました, ファイルを編集しました, ファイルを読み取りました
-コマンドを実行しました, ファイルを編集しました, ファイルを読み取りました
-追加しました！🏌️⛳⚾️⚽🍺🍻🍷など、カテゴリ別に整理して全部で約80種類になっています。カテゴリ管理 → 追加・編集から選べます。他に欲しいアイコンがあればどうぞ！
-
-
-Kakeibo
-コード · HTML 
-今の編集した設定は残しつつ、下記を各項目ごとにも計算できるように編集お願い致します。
-
-    1日いくら → 月予算を自動計算（日数×入力額）
-    •    月予算 → 1日いくら使えるかを自動計算（双方向で連動）
-
-5月1日
-各カテゴリの編集画面にも双方向計算を追加しますね！
-
-
-3個のコマンドを実行しました
-3個のコマンドを実行しました
-内容を把握しました。モーダルのHTMLと関数を両方書き換えます。
-
-
-3個のコマンドを実行しました, ファイルを編集しました
-3個のコマンドを実行しました, ファイルを編集しました
-次に、双方向計算のJS関数と、openEditCat で既存値を表示する処理を追加します。
-
-
-2個のコマンドを実行しました, ファイルを読み取りました
-2個のコマンドを実行しました, ファイルを読み取りました
-追加しました！カテゴリの追加・編集画面で使えるようになっています。
-
-動作イメージ
-
-「1日 600円」と入れると → その月の日数×600円の月予算を自動表示
-「月予算 13,000円」と入れると → 13,000 ÷ 日数 = 1日あたりを自動表示
-編集画面を開いたとき、すでに設定済みの値があれば計算結果も即表示されます
-1日入力 → 月予算欄がまだ空なら自動で連動して入る仕様にしてあります
-
-Kakeibo
-コード · HTML 
-こちらをホーム画面で開けるようにしようとしても、新しい設定が反映されていません。何故でしょうか。
-
-5月1日
-おそらくブラウザのキャッシュが原因です。
-
-ホーム画面に追加したアプリは、最初に読み込んだHTMLをキャッシュに保存していて、新しいファイルに差し替えても古いものを表示し続けることがあります。
-
-解決方法（順番に試してください）
-
-① ホーム画面のアイコンを一度削除して再追加 これが一番確実です。
-
-ホーム画面のアイコンを長押し → 削除
-新しくダウンロードしたHTMLファイルをブラウザで開く
-「ホーム画面に追加」し直す
-② ブラウザのキャッシュをクリア Safariの場合：設定 → Safari → 「履歴とWebサイトデータを消去」 Chromeの場合：設定 → プライバシー → 「閲覧データを削除」
-
-ただ、そもそも毎回ダウンロードし直す手間が発生するのが根本的な問題です。
-
-より良い方法として、このHTMLファイルをGoogle DriveやiCloud Driveに置いておいて、ブラウザで直接開くURLをブックマークにする方法もあります。そうすれば更新のたびにホーム画面への再追加が不要になります。
-
-試してみてうまくいかない場合はお知らせください！
-
-あと月次の全体予算と、項目ごとに入れた予算の合計の辻褄が合っていないので、項目ごとに入れた数字の合計が出るようにしたいです。
-
-5月1日
-なるほど、全体予算と各カテゴリの月予算合計を並べて表示すれば、ズレがすぐわかりますね。概要エリアに「カテゴリ予算合計」を追加します。
-
-
-2個のコマンドを実行しました
-2個のコマンドを実行しました
-次にrender()関数内でカテゴリ予算合計を計算して表示する処理を追加します。
-
-
-コマンドを実行しました, ファイルを読み取りました
-コマンドを実行しました, ファイルを読み取りました
-概要エリアに2つ追加しました！
-
-カテゴリ予算合計
-
-各カテゴリに設定した月予算の合計額を表示
-何カテゴリ分の合計かも表示
-月予算との差
-
-🟡 プラス → 「未割当」の予算がある（まだカテゴリに振り分けられていない）
-🟢 ゼロ → ぴったり！
-🔴 マイナス → カテゴリ予算の合計が月予算を超えている
-例えば月予算15万円に対してカテゴリ合計が13万円なら「+20,000円 未割当」と出るので、どこかのカテゴリに追加で振り分けるべきかすぐわかります。
-
-
-Kakeibo
-コード · HTML 
-あと項目の順番をスムーズに変えられると良いかもしれません。
-
-5月1日
-ドラッグ＆ドロップで並び替えられるようにしますね！
-
-
-4個のコマンドを実行しました, ファイルを読み取りました
-4個のコマンドを実行しました, ファイルを読み取りました
-追加しました！各カードの左端に「⠿」のドラッグハンドルが表示されています。
-
-使い方
-
-PC：ハンドルをドラッグして好きな位置にドロップ
-スマホ：ハンドルを長押し気味にタッチしてそのままスライド
-並び替えた順番はブラウザに保存されるので、次回開いても維持されます。
-
-
-Kakeibo
-コード · HTML 
-カレンダーでその日いくら使ったかみたいなのを表記させるページを作ることも可能ですか？
-
-5月1日
-可能です！こんなイメージで作れます。
-
-では「合計＋カテゴリ内訳＋色付き」をタブで切り替えられるように追加します！
-
-
-6個のコマンドを実行しました, ファイルを読み取りました
-6個のコマンドを実行しました, ファイルを読み取りました
-カレンダーページを追加しました！上部に「🏠 ホーム」「📅 カレンダー」のタブで切り替えられます。
-
-カレンダーの見方
-
-支出があった日に金額を表示
-🟢 緑：平均以下で好調　🟡 黄：平均前後　🔴 赤：平均の1.5倍以上
-各カテゴリを色のドットで表示（何に使ったかひと目でわかる）
-日付をタップすると、その日の明細が下に展開
-その他
-
-ホームで選んでいる月と自動同期
-カレンダー内でも前後月に移動可能
-今日の日付はハイライト表示
-
-Kakeibo
-コード · HTML 
-Q: カレンダーに何を表示したいですか？
-回答: 全部見せて
-
-Q: 表示方法はどちらがいいですか？
-回答: タブで切り替え（今のページと同じファイル内）
-
-5月1日
-すでに「全部見せて」の内容で作ってあります！金額・カテゴリドット・タップで明細展開、全部入っています。
-
-ダウンロードして試してみてください。何か表示がおかしい点や追加したいことがあればお知らせください！
-
-さっきまで更新していたデータが何故か全て消えてしまいました。復旧できますか？
-
-5月1日
-残念ながら、ブラウザのlocalStorageに保存されていたデータはこちら側からは確認・復旧ができません。
-
-データが消えた可能性のある原因
-
-ブラウザの「履歴・キャッシュを削除」を実行した
-Safariのプライベートブラウズで開いていた
-新しくダウンロードしたHTMLを別のブラウザで開いた（ブラウザが変わるとデータも別）
-iOSの設定 → Safari → 「履歴とWebサイトデータを消去」を実行した
-今後の対策として追加できる機能
-
-データ消失を防ぐために、以下を追加することは可能です：
-
-エクスポート機能（JSONファイルとしてバックアップ保存）
-インポート機能（バックアップから復元）
-CSVエクスポート（Excelで開ける）
-定期的にバックアップを取れるようにしておくと安心です。追加しましょうか？
-
-お願いします
-
-5月1日
-では追加します！
-
-
-4個のコマンドを実行しました, ファイルを読み取りました
-4個のコマンドを実行しました, ファイルを読み取りました
-追加しました！ヘッダーに💾ボタンが増えています。
-
-使い方
-
-💾ボタンを開くと3つの操作ができます：
-
-「JSONでバックアップ保存」→ 全データ（カテゴリ設定・予算・全月の記録）をファイルに保存。復元にも使えます
-
-「CSVで保存（Excel対応）」→ 全記録を表形式で書き出し。Excelで開いて集計や分析ができます
-
-「JSONファイルを選択」→ 以前保存したJSONから完全復元。カテゴリ設定も含めて戻ります
-
-今後の習慣として、月初などに定期的にJSONバックアップを取っておくと安心です。
-
-
-Kakeibo
-コード · HTML 
-エラーが出てますが大丈夫ですか？
-
-5月1日
-どんなエラーメッセージが表示されていますか？スクリーンショットか、エラーの文言を教えてもらえると原因を特定できます！
-
-IMG_7380.jpeg
-5月1日
-Uncaught Error: Script error. ですね。これはSafariのホーム画面アプリモードで起きやすいエラーで、JavaScriptのどこかに構文エラーがある可能性が高いです。ファイルを検査します。
-
-
-2個のコマンドを実行しました
-2個のコマンドを実行しました
-原因がわかりました。CSVエクスポートのコードにクォートのエスケープ処理で構文エラーが出ています。修正します。
-
-
-3個のコマンドを実行しました, ファイルを読み取りました
-3個のコマンドを実行しました, ファイルを読み取りました
-修正しました！原因はCSVエクスポートのコード内でクォート記号のエスケープが壊れていたことでした。構文チェックも通っています。
-
-ダウンロードし直して試してみてください。ホーム画面に追加し直す必要があるのでご注意を！
-
-
-Kakeibo
-コード · HTML 
-リンクを貼り付けて他のブラウザで開くと今までの修正箇所が一個も引き継がれていません。どうしたらよいでしょうか。
-
-5月1日
-それはlocalStorageの仕様上、ブラウザが違うとデータが共有されないためです。
-
-今すぐできる解決策
-
-今使っているブラウザで💾ボタン →「JSONでバックアップ保存」でファイルを書き出して、新しいブラウザで同じHTMLを開いてから💾→「JSONファイルを選択」で読み込めばデータが移せます。
-
-根本的な解決策として、データの保存先をlocalStorageではなく**Claudeのストレージ（sessions間で永続化）**に切り替えることができます。そうすればブラウザが変わっても、ホーム画面から開いても常に同じデータが使えます。
-
-切り替えましょうか？
-
-お願いします。
-
-5月1日
-では、データ保存をClaudeの永続ストレージに切り替えます。少し時間がかかります。
-
-
-6個のコマンドを実行しました, ファイルを読み取りました
-6個のコマンドを実行しました, ファイルを読み取りました
-構文エラーなしで完成しました！
-
-変更内容
-
-データの保存先をClaudeの永続ストレージに変更
-SafariでもChromeでも、どのデバイスで開いても同じデータが使える
-localStorageにも同時保存するのでネットが切れていても動作する
-移行手順（今までのデータを引き継ぐ場合）
-
-今まで使っていたブラウザで古いHTMLを開く
-💾→「JSONでバックアップ保存」
-新しいHTMLをダウンロードして開く
-💾→「JSONファイルを選択」で復元
-これ以降は毎回この手順は不要で、どこで開いても自動同期されます！
-
-
-Kakeibo
-コード · HTML 
-またデータが消えています。
-
-5月1日
-申し訳ありません。原因を確認します。
-
-
-Check storage functions
-Check storage functions
-問題がわかりました。saveState()がasync関数なのに、呼び出し側でawaitしていないため、データが書き込まれる前に次の処理が走ってしまうケースがあります。またwindow.storageはこのアプリ（Claude.ai上のArtifact）でのみ動作し、ダウンロードしたHTMLファイルでは使えません。
-
-根本的に作り直します。ダウンロードして使う前提なら、バックエンドなしで確実に動く方法に切り替えます。
-
-
-3個のコマンドを実行しました, ファイルを読み取りました
-3個のコマンドを実行しました, ファイルを読み取りました
-修正しました。正直にお伝えします：
-
-なぜデータが消えていたか 前回の「永続ストレージ」への切り替えが逆効果でした。window.storageはClaude.ai上のArtifactでしか動かず、ダウンロードしたHTMLでは使えないため、保存が全く機能していませんでした。
-
-今回の修正 シンプルで確実なlocalStorageに戻しました。これが最も安定します。
-
-ブラウザをまたいで使いたい場合の現実的な方法 localStorageはブラウザをまたげないのは仕様上の限界です。対策は：
-
-毎回同じブラウザ・同じデバイスで開く（一番簡単）
-💾バックアップ→インポートで手動移行する
-月1回など定期的にJSONバックアップを取る習慣をつける
-ホーム画面に追加する場合はSafariで開いてから追加し、以後はそのアイコンからのみ開くと決めると安定します。
-
-
-Kakeibo
-コード · HTML 
-コードがあるので、これをアプリとして販売することは可能ですか？
-
-5月1日
-技術的には可能です！いくつかの選択肢があります。
-
-販売・公開の方法
-
-① Webアプリとして公開（おすすめ）
-
-Vercel・Netlifyなどに無料でホスティング
-URLを共有するだけで誰でも使える
-有料版はStripeで決済機能を追加
-② アプリストアで販売
-
-CapacitorやCordovaでiOS/Androidアプリに変換可能
-App Store（Apple）・Google Playで販売できる
-ただし審査があり、年間費用（Appleは約15,000円/年）が必要
-③ noteやBOOTHでHTMLファイルを販売
-
-一番手軽
-ただしlocalStorageの限界（ブラウザ依存）はそのまま残る
-ただし注意点が2つあります
-
-Anthropic APIの利用規約：レシート読み取り機能でClaude APIを使っているため、そのまま販売する場合はAnthropicの商用利用規約の確認が必要です。APIキーの扱いも要検討です。
-このコードの著作権：私（Claude）が生成したコードは清野さんが自由に使用・販売できます。Anthropicはコードの所有権を主張しません。
-本格的に販売を考えるなら、データをサーバーで管理するバックエンド追加とAPIキーをサーバー側で管理する仕組みが必要になります。興味があれば一緒に考えます！
-
-あまり現在スマホ前提で作られていない感じがします。バックアップもスマホだとできません。スマホ用に改修をお願い致します。
-
-5月1日
-おっしゃる通りです。スマホ前提で全体的に見直します。具体的に改善する点を確認させてください。
-
-iPhoneSafari向けに全部まとめて改修します。特にバックアップはiOSだとファイル操作が独特なので、テキストコピー＆ペースト方式に切り替えます。少し時間がかかりますが全面的に作り直しますね。
-
-
-5個のコマンドを実行しました
-5個のコマンドを実行しました
-メタタグは既に入っています。次にCSS・UIを全面的にスマホ最適化します。
-
-
-7個のコマンドを実行しました, ファイルを読み取りました
-7個のコマンドを実行しました, ファイルを読み取りました
-iPhoneに最適化した版です！主な改善点：
-
-操作性
-
-ボタン・入力欄を全て指で押しやすいサイズに拡大（最小44px）
-ノッチ・ホームバーのセーフエリアに対応
-iOSのフォント自動拡大を無効化（ズームしなくなる）
-タップ時のハイライト除去でスムーズな操作感
-バックアップ（一番の改善点）
-
-ファイル操作なし → テキストコピー&ペースト方式に変更
-「バックアップをコピー」→ メモアプリに貼り付けて保存
-復元は貼り付けて「復元」ボタンを押すだけ
-CSV も クリップボードにコピーされるのでメモアプリ経由で保存可能
-データ移行の手順（ブラウザ間）
-
-旧ブラウザで💾→「バックアップをコピー」
-メモアプリに貼り付けて保存
-新ブラウザで同じHTMLを開いて💾→テキストを貼り付け→「復元」
-
-Kakeibo
-コード · HTML 
-Claude上以外で開くと結局最初の版が出てきます。キャッシュのせいでしょうか？
-
-5月1日
-キャッシュではなく、毎回古いファイルを開いているのが原因だと思います。
-
-確認してほしいこと
-
-ホーム画面に追加したアイコンは、追加した時点のファイルが紐付いています。新しいHTMLをダウンロードしても、古いアイコンからは古いファイルが開きます。
-
-解決手順
-
-ホーム画面の古いアイコンを長押し→削除
-Claudeからダウンロードした最新のHTMLファイルをSafariで開く
-画面下の共有ボタン →「ホーム画面に追加」で再登録
-ファイルの場所の確認
-
-「ファイル」アプリ → ダウンロード に kakeibo.html があるはずです。古いものと新しいものが混在していないか確認してみてください。日付が今日のものが最新です。
-
-試してみていかがでしょうか？
-
-HTMLのダウンロードができません。
-
-5月1日
-iPhoneのSafariではHTMLファイルを直接ダウンロードして開くことが難しいです。根本的な解決策として、ファイルをダウンロード不要にする方法が一番です。
-
-一番確実な方法：GitHub Pagesで無料公開
-
-github.com で無料アカウントを作成
-リポジトリを作成してHTMLファイルをアップロード
-固定URLが発行される（例：あなたの名前.github.io/kakeibo）
-そのURLをSafariで開いてホーム画面に追加
-これでURLが変わらないので、毎回同じアイコンから開けて、更新もURLが変わりません。
-
-GitHubのアカウントはお持ちですか？お持ちであれば手順を詳しく案内します。お持ちでなければ一緒にセットアップしましょうか？
-
-ないです
-
-5月1日
-では一緒に作りましょう！簡単です。
-
-GitHubアカウント作成手順
-
-github.com をSafariで開く
-「Sign up」をタップ
-メールアドレス・パスワード・ユーザー名を入力
-メール認証を完了
-アカウントが作れたら教えてください。次の手順（ファイルのアップロードとURL発行）を案内します！
-
-ユーザー名は何でも大丈夫ですが、URLに使われるので 英数字のシンプルなものがおすすめです（例：kiyono-yu など）。
-
-作れました
-
-5月1日
-素晴らしいです！次はファイルをアップロードします。
-
-手順①　リポジトリを作成
-
-GitHub画面右上の「＋」→「New repository」をタップ
-Repository name に kakeibo と入力
-「Public」を選択（これが重要です）
-「Add a README file」にチェック
-「Create repository」をタップ
-できたら教えてください！
-
-できました
-
-5月1日
-次はHTMLファイルをアップロードします！
-
-手順②　ファイルをアップロード
-
-作成したリポジトリのページで「Add file」→「Upload files」をタップ
-「choose your files」をタップ
-Claudeのチャット画面に戻り、上にある**ダウンロードリンク（kakeibo）**を長押し→「ファイルに保存」
-保存できたら再びGitHubに戻り、そのファイルを選択
-下の「Commit changes」をタップ
-ファイルの保存ができない場合は、別の方法もあります。
-
-代替方法（コピー&ペースト）
-
-GitHubで「Create new file」をタップ
-ファイル名に index.html と入力
-Claudeのチャットでダウンロードリンクを長押し→「コピー」ではなく…
-実は一番確実なのはPCからアップロードすることです。PCはお手元にありますか？
-
-add fileの場所がわかりません。
-
-5月1日
-リポジトリのページを開いた状態のスクリーンショットを撮って見せてもらえますか？画面によって場所が違うので確認させてください！
-
-IMG_7381.png
-5月1日
-見えました！上部の「＋」ボタンをタップしてください。画面上部のナビバーにある＋です。
-
-そこから「Create new file」を選ぶとファイルを直接作成できます。ファイルのアップロードよりこの方法が一番確実です！
-
-タップしたら次の手順を案内します。
-
-IMG_7382.png
-create new fileもありません。
-
-5月1日
-このメニューからは作れないですね。別の方法でいきましょう！
-
-一度このメニューを閉じて、「…」（三点ドット）→ 「…」ではなく、ファイル一覧の README.md をタップしてみてください。
-
-実は一番早い方法は URLを直接編集 することです。
-
-Safariのアドレスバーに表示されているURLの末尾を見てください。おそらく：
-
-github.com/sygslumber107-glitch/kakeibo
-
-このURLを以下に書き換えてアクセスしてください：
-
-github.com/sygslumber107-glitch/kakeibo/new/main
-
-これで新規ファイル作成画面が開きます！
-
-できました。
-
-5月1日
-では次はファイルの中身を貼り付けます！
-
-手順
-
-ファイル名の欄に index.html と入力
-下の大きいテキストエリアをタップ
-Claudeのチャットに戻り、下のコードをコピー
-ただしコードが長すぎてここに貼るとうまくいかない可能性があります。代わりに：
-
-Claudeに戻って以下を実行してください👇
-
-このチャットの上にある家計簿のダウンロードリンク（kakeibo）を長押し→「コピー」ではなく、私がコードを分割して貼り付けられるように準備します。
-
-実は一番確実な方法は、GitHubの新規ファイル画面を開いたまま、コードを直接ここ（Claude）からコピーすることです。
-
-まず確認ですが、今開いているファイル作成画面のURLを教えてもらえますか？それと、テキストエリアには何か入力できそうですか？
-
-https://github.com/sygslumber107-glitch/kakeibo/new/main
-
-これです。
-
-5月1日
-ではコードを準備します！テキストエリアに貼り付けられるよう、全コードをここにコピーできる形で出します。
-
-
-Check file size
-Check file size
-70KBあるのでそのまま貼るのは難しいです。もっと簡単な方法でいきましょう！
-
-GitHub Gistを使う方法（一番簡単）
-
-今開いているURLを閉じてOKです
-Safariで gist.github.com を開く
-右上の「＋」をタップ
-ファイル名に index.html と入力
-Claudeに戻って、下のリンクを長押し→「リンクをコピー」
-実はもっと良い方法があります。私がGitHubに直接アップロードするコードをテキストファイルとして出力して、それをコピーしてもらう形にします。
-
-ただ70KBは長すぎてiPhoneのコピペでは厳しいです。
-
-一番現実的な解決策をご提案します：
-
-iPhoneだけでは限界があります。PCを一時的に借りられる環境（職場・家族・友人・図書館など）はありますか？PCが一度使えれば5分で完了します。
-
-PCでいけます
-
-5月1日
-では一番簡単な方法でいきましょう！
-
-PCでの手順（5分で完了）
-
-① ファイルをダウンロード
-
-PCのブラウザでこのClaudeの会話を開く
-上にある「kakeibo」のダウンロードリンクをクリック
-kakeibo.html がダウンロードされる
-② GitHubにアップロード
-
-github.com/sygslumber107-glitch/kakeibo を開く
-「Add file」→「Upload files」をクリック
-ダウンロードした kakeibo.html をドラッグ＆ドロップ
-ファイル名を index.html に変更
-「Commit changes」をクリック
-③ GitHub Pagesを有効化
-
-リポジトリの「Settings」タブをクリック
-左メニューの「Pages」をクリック
-Source を「Deploy from a branch」に設定
-Branch を「main」「/(root)」に設定して「Save」
-④ URLが発行される 数分後に： https://sygslumber107-glitch.github.io/kakeibo/
-
-このURLをiPhoneのSafariで開いて、ホーム画面に追加すれば完成です！
-
-できたら教えてください！
-
-add fileの場所がわかりません
-
-5月1日
-スクリーンショットを送ってもらえますか？PCの画面を見れば場所をすぐ案内できます！
-
-1777635817779_image.png
-5月1日
-見えました！まずGitHubにサインインしていないので「Sign in」が必要です。
-
-右上の「Sign in」をクリックして、先ほど作ったアカウントでログインしてください。ログインすると「Add file」ボタンが表示されます！
-
-1777636082022_image.png
-③１．no
-
-5月1日
-ログインできて、kakeibo.html もアップロードできていますね！ただファイル名が kakeibo.html のままなので index.html に変える必要があります。
-
-手順：ファイル名を変更
-
-kakeibo.html をクリック
-右上の鉛筆アイコン（編集）をクリック
-ファイル名の欄で kakeibo.html を消して index.html と入力
-右上の「Commit changes」をクリック
-できたら教えてください！
-
-できました
-
-5月1日
-完璧です！次はGitHub Pagesを有効化します。
-
-手順：Settings → Pages
-
-上のタブから「Settings」をクリック
-左メニューをスクロールして「Pages」をクリック
-「Branch」の下が「None」になっているので「main」に変更
-その隣が「/(root)」になっていることを確認
-「Save」をクリック
-できたら教えてください！
-
-完了
-
-5月1日
-あと少しです！数分待ってから以下のURLをブラウザで開いてください：
-
-https://sygslumber107-glitch.github.io/kakeibo/
-
-開けたらiPhoneのSafariでも同じURLを開いて、**共有ボタン→「ホーム画面に追加」**すれば完成です！
-
-URLは変わらないので、今後Claudeで更新した場合もGitHubにファイルを上書きアップロードするだけで自動反映されます。
-
-開けましたか？
-
-いけました！！！
-
-5月1日
-やりました！🎉
-
-これで今後は：
-
-どのブラウザからでも同じURLで開ける
-ホーム画面のアイコンから毎回同じアプリが開く
-更新する時はGitHubに新しいファイルを上書きするだけ
-URLをメモしておくと便利です： https://sygslumber107-glitch.github.io/kakeibo/
-
-データについて一点確認です
-
-今までClaudeのプレビューや別のブラウザで入力していたデータは残念ながら引き継げていません。💾バックアップ機能でコピーしてあれば新しいURLで復元できます。
-
-これからはこのURLをメインに使ってください。何か追加したい機能があればいつでもどうぞ！
-
-作っていただいた家計簿は5,6月しかないですが、これは月が変わると自動で7月も生成されますか？
-
-5月2日
-はい、自動で生成されます！
-
-月が変わると、ホーム画面の月バッジをタップして7月に切り替えた時点で自動的に7月のデータが作られます。
-
-カテゴリ設定・目標金額はそのまま引き継がれます
-デフォルト予算をONにしていれば月予算も自動でセットされます
-過去の月（5月・6月）のデータも残ったままです
-月初に月バッジをタップして7月に切り替えるだけでOKです！
-
-デフォルト予算onってどこでできますか？
-
-5月2日
-上部の「🎯 予算を設定」ボタンを押すと設定画面が開きます。
-
-一番下に「毎月このデフォルト予算を使う」というトグルスイッチがあるのでそれをONにしてください。
-
-その前に上の2つのどちらかで今月の予算を設定しておくと、その金額がデフォルトとして毎月自動適用されます！
-
-各項目もそのまま引き継がれますかね？
-
-5月2日
-はい、引き継がれます！
-
-カテゴリ（昼食・夕食など）の設定は月をまたいで共通なので、7月に切り替えてもそのまま使えます。引き継がれるものをまとめると：
-
-引き継がれるもの
-
-カテゴリ名・アイコン・順番
-1日の目標金額
-カテゴリごとの月予算
-デフォルト予算（ON設定時）
-月ごとに独立するもの
-
-支出の記録（入力したデータ）
-その月の実際の予算額（デフォルトOFFの場合）
-なので7月になっても何も設定し直す必要はなく、金額を入力するだけで使えます！
-
-素晴らしいです！
-
-ちなみに今は何のストレスなく使えてますが、改修したい時はGitHubに上げ直しが必要かと思いますがそうなるとデータは消えてしまいますよね？
-
-5月2日
-データは消えません！
-
-なぜかというと、データはGitHubではなくiPhoneのブラウザ（localStorage）に保存されているからです。GitHubにあるのはアプリのコード（見た目や機能）だけです。
-
-なので：
-
-GitHubのファイルを上書きしてもデータはそのまま
-アプリを更新しても過去の記録は残る
-ただし消えるケースは以下の時だけ
-
-iPhoneのSafariの「履歴とWebサイトデータを消去」を実行した時
-長期間（数週間以上）アプリを開かなかった時（iOSが自動削除）
-別のブラウザやデバイスで開いた時
-なので月1回程度💾バックアップをコピーしてメモアプリに保存しておく習慣をつけると完璧です！
-
-部分的に機能を改修しても大丈夫ということですね？
-
-5月2日
-はい、全く問題ありません！
-
-コードを更新してGitHubに上書きアップロードするだけで、データはそのまま機能だけ新しくなります。
-
-更新の流れ
-
-Claudeで機能を改修
-新しい index.html をダウンロード
-GitHubの index.html を上書きアップロード
-数分後に自動反映
-ホーム画面のアイコンはそのままで、次に開いた時には新しい機能が使えるようになっています。
-
-いつでも気軽に「この機能追加して」「ここ直して」と言ってください！
-
-一度入力した日にちを変える機能追加してほしいです。
-
-5月10日
-なるほど、レシートを後から入力した時などに日付がずれてしまうケースですね。追加します！
-
-
-7個のコマンドを実行しました, ファイルを読み取りました
-7個のコマンドを実行しました, ファイルを読み取りました
-追加しました！
-
-使い方
-
-記録一覧の各項目に✏️ボタンが追加されています
-タップすると日付・金額・カテゴリ・メモを編集できます
-日付を変えると自動的に正しい月に移動します
-GitHubに上書きアップロードすれば反映されます！
-
-
-Kakeibo
-コード · HTML 
-次の月に変えられないため、月を変えるボタンを改修してください。
-
-6月1日
-今は月バッジをタップするたびに「前月→今月→翌月」と順番に切り替わる仕様になっていますが、わかりにくいですよね。前後の矢印ボタンに変えます。
-
-
-3個のコマンドを実行しました, ファイルを読み取りました
-3個のコマンドを実行しました, ファイルを読み取りました
-修正しました！ヘッダーの月表示が「‹ 6月 ›」のような形になり、左右の矢印で自由に前後の月に移動できます。制限なく何ヶ月先でも移動できます。
-
-GitHubに上書きアップロードすれば反映されます！
-
-
-Kakeibo
-コード · HTML 
-githubに上書きしたいのですがどこを上書きすればよいですか？
-
-6月1日
-GitHubの index.html を上書きします！
-
-手順
-
-github.com/sygslumber107-glitch/kakeibo を開く
-ファイル一覧の index.html をクリック
-右上の**鉛筆アイコン（Edit）**をクリック
-画面右上の 「...」→「Upload file」 または鉛筆アイコンの横の 「↓」→「Upload file」 をクリック
-新しい kakeibo.html をアップロード
-**「Commit changes」**をクリック
-ただiPhoneからだとファイルのアップロードが難しい場合があります。PCからの場合は：
-
-index.html をクリック
-右上の鉛筆アイコンの隣の 「...」→「Delete file」 ではなく
-ファイル一覧に戻って 「Add file」→「Upload files」
-新しいファイルをドラッグ＆ドロップ
-「Commit changes」
-スクリーンショット送ってもらえれば場所を正確に案内します！
-
-1780289274078_image.png
-どこでしょうか。ちなみに更新してみたのですが使っている家計簿は更新されません。
-
-6月1日
-画面が見えました！右上の鉛筆アイコン（✏️）の隣の「↓」矢印をクリックしてください。
-
-そこに「Upload file」が出てくるので、新しい kakeibo.html をアップロードして「Commit changes」で完了です。
-
-更新が反映されない件について
-
-GitHubへのアップロードはできていても、ブラウザのキャッシュが古いファイルを表示している可能性があります。
-
-iPhoneで反映させる方法：
-
-Safariでアプリを開く
-アドレスバーに https://sygslumber107-glitch.github.io/kakeibo/ と入力して開き直す（ホーム画面アイコンからではなく）
-それでも古い場合はURLの末尾に ?v=2 をつけて開く→https://sygslumber107-glitch.github.io/kakeibo/?v=2
-反映されたらホーム画面のアイコンを一度削除して追加し直すと次回からアイコンでも最新版が開きます。
-
-5月の入力情報はなくしたくないのですがどうしたらよいですか。
-
-6月1日
-データはGitHubではなくiPhoneのブラウザに保存されているので、GitHubのファイルを更新してもデータは消えません。安心して上書きアップロードしてください！
-
-ただ念のため、更新前にバックアップを取っておくと安全です。
-
-手順
-
-今のアプリを開く
-💾ボタン →「バックアップをコピー」
-iPhoneのメモアプリに貼り付けて保存
-これで万が一の時も復元できます。バックアップが取れたらGitHubに上書きアップロードしてください！
-
-金額入力した後の登録ボタンがなくなってしまったのと、あなたが役に立つと思う分析ツールを別タブで作成できますか？
-
-6月2日
-2点まとめて対応します！まず登録ボタンの件を確認します。
-
-
-Check input panel and add button
-Check input panel and add button
-ボタン自体はあります。カテゴリをタップすると入力欄が開いて「＋」ボタンが出る仕様ですが、見えにくくなっている可能性があります。ボタンをもっとわかりやすく「登録」テキスト付きに変えます。分析タブも一緒に作ります！
-
-
-2個のコマンドを実行しました
-2個のコマンドを実行しました
-次に分析タブを追加します。
-
-
-5個のコマンドを実行しました, ファイルを読み取りました
-5個のコマンドを実行しました, ファイルを読み取りました
-2点対応しました！
-
-① 登録ボタン 金額・メモ入力欄の下に「＋ 登録する」という大きなボタンを配置しました。黄色で目立つので見つけやすくなっています。
-
-② 📊 分析タブ（新規追加） タブに「📊 分析」が追加されました。内容は：
-
-今月のサマリー：支出合計・1日平均・残り予算・月末着地予測
-カテゴリ別内訳：横棒グラフで割合を視覚化
-過去6ヶ月の推移：棒グラフで月ごとのトレンド確認
-💡 アドバイス：予算オーバーペースや使いすぎカテゴリを自動検知してコメント
-GitHubの index.html に上書きアップロードすれば反映されます！
-
-
-Kakeibo
-コード · HTML 
-
-
-
-
-
-Claude は AI のため、誤りを含む可能性があります。回答内容は必ずご確認ください。
-
-
-raw
-Kakeibo · HTML
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -1028,7 +21,7 @@ Kakeibo · HTML
   button{cursor:pointer;}
   /* Prevent iOS font size adjust */
   html{-webkit-text-size-adjust:100%;}
- 
+
   header{padding:max(22px,env(safe-area-inset-top,22px)) 20px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;}
   .logo{font-weight:900;font-size:20px;color:var(--accent);}
   .logo small{color:var(--muted);font-weight:400;font-size:11px;display:block;}
@@ -1039,7 +32,7 @@ Kakeibo · HTML
   .month-btn:hover{border-color:var(--accent);color:var(--text);}
   .icon-btn{background:var(--surface2);border:1px solid var(--border);border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:.2s;}
   .icon-btn:hover{border-color:var(--accent);}
- 
+
   /* Analytics */
   .an-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:0;}
   .an-title{font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
@@ -1062,14 +55,14 @@ Kakeibo · HTML
   .an-no-data{color:var(--muted);font-size:13px;text-align:center;padding:16px;}
   .an-advice{background:rgba(232,200,74,.08);border:1px solid rgba(232,200,74,.2);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--text);}
   .an-advice-title{font-size:11px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
- 
+
   /* Tabs */
   .tab-nav{display:flex;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:58px;z-index:99;}
   .tab-btn{min-height:44px;}
   .tab-btn{flex:1;padding:12px 0;font-size:13px;font-weight:700;font-family:inherit;background:none;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:.2s;}
   .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
   .tab-page{display:none;}.tab-page.active{display:block;}
- 
+
   /* Calendar */
   .cal-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 10px;}
   .cal-nav-btn{background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:18px;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;}
@@ -1111,13 +104,13 @@ Kakeibo · HTML
   .day-detail-amount{font-family:'DM Mono',monospace;font-size:14px;}
   .day-detail-total{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);font-weight:700;}
   .day-detail-total-val{font-family:'DM Mono',monospace;font-size:17px;color:var(--accent);}
- 
+
   .scan-bar{padding:14px 20px;border-bottom:1px solid var(--border);}
   .scan-btn{width:100%;background:linear-gradient(135deg,#1e1a08,#2a2408);border:1px solid var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px 14px;cursor:pointer;transition:.2s;color:var(--accent);font-family:inherit;font-size:16px;font-weight:700;min-height:64px;}
   .scan-btn:hover{background:linear-gradient(135deg,#2a2508,#3a3208);}
   .scan-btn .icon{font-size:22px;}
   .scan-btn small{font-size:11px;color:var(--muted);font-weight:400;display:block;margin-top:1px;}
- 
+
   .overview{padding:14px 20px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   .ov-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;}
   .ov-card.full{grid-column:1/-1;}
@@ -1131,12 +124,12 @@ Kakeibo · HTML
   .set-budget-btn{width:100%;margin-top:8px;background:none;border:1px dashed var(--border);border-radius:8px;color:var(--muted);font-size:12px;padding:7px;cursor:pointer;font-family:inherit;transition:.2s;display:flex;align-items:center;justify-content:center;gap:6px;}
   .set-budget-btn:hover{border-color:var(--accent);color:var(--accent);}
   .default-badge{font-size:10px;background:rgba(232,200,74,.15);color:var(--accent);padding:2px 7px;border-radius:999px;margin-top:4px;display:inline-block;}
- 
+
   .sec-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px;}
   .sec-title{font-size:10px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
   .sec-action{background:none;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px;padding:4px 12px;cursor:pointer;font-family:inherit;transition:.2s;}
   .sec-action:hover{border-color:var(--accent);color:var(--accent);}
- 
+
   .cards{padding:0 20px;display:flex;flex-direction:column;gap:8px;}
   .cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,opacity .2s,transform .15s;}
   .cat-card.dragging{opacity:.4;transform:scale(.98);}
@@ -1168,7 +161,7 @@ Kakeibo · HTML
   .register-btn:hover{opacity:.88;}
   .memo-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-family:inherit;font-size:16px;padding:10px 12px;outline:none;}
   .memo-input::placeholder{color:#3a3a5a;}
- 
+
   .history-list{padding:0 20px;display:flex;flex-direction:column;gap:6px;}
   .hist-item{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;animation:fadeIn .2s;}
   @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
@@ -1182,7 +175,7 @@ Kakeibo · HTML
   .edit-entry-btn:hover{color:var(--accent);}
   .del-btn:hover{color:var(--danger);}
   .empty{color:var(--muted);font-size:13px;text-align:center;padding:24px;}
- 
+
   /* Modals */
   .overlay{position:fixed;inset:0;background:rgba(0,0,0,.78);display:flex;align-items:flex-end;justify-content:center;z-index:200;opacity:0;pointer-events:none;transition:opacity .2s;}
   .overlay.show{opacity:1;pointer-events:all;}
@@ -1201,7 +194,7 @@ Kakeibo · HTML
   .btn-primary:hover{opacity:.88;}
   .btn-secondary{width:100%;background:none;color:var(--muted);border:1px solid var(--border);border-radius:12px;padding:12px;font-size:14px;cursor:pointer;font-family:inherit;transition:.2s;margin-top:8px;}
   .btn-secondary:hover{border-color:var(--muted);color:var(--text);}
- 
+
   /* Budget modal special styles */
   .calc-box{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:14px;}
   .calc-box-title{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;}
@@ -1214,7 +207,7 @@ Kakeibo · HTML
   .calc-arrow{text-align:center;color:var(--muted);font-size:18px;margin:4px 0;}
   .calc-result{background:rgba(232,200,74,.08);border:1px solid rgba(232,200,74,.2);border-radius:10px;padding:10px 14px;font-family:'DM Mono',monospace;font-size:20px;color:var(--accent);text-align:center;margin-top:6px;min-height:44px;display:flex;align-items:center;justify-content:center;}
   .calc-result small{font-size:12px;color:var(--muted);margin-left:6px;font-family:inherit;}
- 
+
   .divider{height:1px;background:var(--border);margin:16px 0;}
   .toggle-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
   .toggle-label{font-size:14px;}
@@ -1225,7 +218,7 @@ Kakeibo · HTML
   .toggle-slider:before{content:'';position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s;}
   .toggle input:checked+.toggle-slider{background:var(--accent);}
   .toggle input:checked+.toggle-slider:before{transform:translateX(18px);}
- 
+
   /* Cat manager */
   .cat-edit-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);}
   .cat-edit-item:last-child{border-bottom:none;}
@@ -1242,7 +235,7 @@ Kakeibo · HTML
   .emoji-opt{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:18px;border-radius:8px;cursor:pointer;border:2px solid transparent;background:var(--surface2);transition:.15s;}
   .emoji-opt.sel{border-color:var(--accent);background:rgba(232,200,74,.12);}
   .emoji-opt:hover{background:var(--border);}
- 
+
   /* Receipt scan */
   .receipt-drop{border:2px dashed var(--border);border-radius:14px;padding:32px 20px;text-align:center;cursor:pointer;transition:.2s;margin-bottom:14px;background:var(--surface2);}
   .receipt-drop:hover,.receipt-drop.drag{border-color:var(--accent);background:rgba(232,200,74,.05);}
@@ -1266,7 +259,7 @@ Kakeibo · HTML
 </style>
 </head>
 <body>
- 
+
 <header>
   <div class="logo">かけいぼ<small>シンプル家計管理</small></div>
   <div class="header-right">
@@ -1280,24 +273,24 @@ Kakeibo · HTML
     <div class="icon-btn" title="カテゴリ管理" onclick="openCatManager()">⚙️</div>
   </div>
 </header>
- 
+
 <!-- Tab nav -->
 <div class="tab-nav">
   <button class="tab-btn active" id="tab-home-btn" onclick="switchTab('home')">🏠 ホーム</button>
   <button class="tab-btn" id="tab-cal-btn" onclick="switchTab('cal')">📅 カレンダー</button>
   <button class="tab-btn" id="tab-analytics-btn" onclick="switchTab('analytics')">📊 分析</button>
 </div>
- 
+
 <!-- HOME TAB -->
 <div class="tab-page active" id="tab-home">
- 
+
 <div class="scan-bar">
   <button class="scan-btn" onclick="openScanModal()">
     <span class="icon">📷</span>
     <span>レシートを読み取る<small>写真を撮るだけで自動入力</small></span>
   </button>
 </div>
- 
+
 <div class="overview">
   <div class="ov-card">
     <div class="ov-label">今月の支出</div>
@@ -1331,20 +324,20 @@ Kakeibo · HTML
     </button>
   </div>
 </div>
- 
+
 <div class="sec-header">
   <span class="sec-title">カテゴリ別</span>
   <button class="sec-action" onclick="openCatManager()">＋ カテゴリ管理</button>
 </div>
 <div class="cards" id="cards"></div>
- 
+
 <div class="sec-header" style="margin-top:10px">
   <span class="sec-title">今月の記録</span>
 </div>
 <div class="history-list" id="historyList"></div>
- 
+
 </div><!-- /tab-home -->
- 
+
 <!-- CALENDAR TAB -->
 <div class="tab-page" id="tab-cal">
   <div class="cal-nav">
@@ -1380,7 +373,7 @@ Kakeibo · HTML
     </div>
   </div>
 </div><!-- /tab-cal -->
- 
+
 <!-- ANALYTICS TAB -->
 <div class="tab-page" id="tab-analytics">
   <div class="cal-nav" style="padding-bottom:0">
@@ -1388,14 +381,14 @@ Kakeibo · HTML
     <div class="cal-month-label" id="analyticsMonthLabel">── 月</div>
     <button class="cal-nav-btn" onclick="analyticsNextMonth()">›</button>
   </div>
- 
+
   <!-- 月サマリー -->
   <div style="padding:14px 20px 0;display:flex;flex-direction:column;gap:10px;" id="analyticsContent">
   </div>
 </div><!-- /tab-analytics -->
- 
+
 <!-- ── MODALS ── -->
- 
+
 <!-- Edit entry modal -->
 <div class="overlay" id="editEntryOverlay">
   <div class="sheet">
@@ -1420,13 +413,13 @@ Kakeibo · HTML
     <button class="btn-secondary" onclick="closeModal('editEntry')">キャンセル</button>
   </div>
 </div>
- 
+
 <!-- Backup modal -->
 <div class="overlay" id="backupOverlay">
   <div class="sheet">
     <div class="sheet-title">💾 バックアップ・復元 <button class="close-btn" onclick="closeModal('backup')">×</button></div>
     <div class="sheet-sub">iPhoneでも確実に使えるテキスト形式です</div>
- 
+
     <!-- Export section -->
     <div class="calc-box" style="margin-bottom:12px">
       <div class="calc-box-title">📤 バックアップ（書き出し）</div>
@@ -1434,7 +427,7 @@ Kakeibo · HTML
       <button class="btn-primary" onclick="copyBackup()" style="margin-bottom:8px" id="copyBackupBtn">📋 バックアップをコピー</button>
       <button class="btn-primary" onclick="exportCSV()" style="background:var(--surface2);color:var(--text);border:1px solid var(--border);margin-top:0">📊 CSVをコピー（Excel用）</button>
     </div>
- 
+
     <!-- Import section -->
     <div class="calc-box">
       <div class="calc-box-title">📥 復元（読み込み）</div>
@@ -1443,17 +436,17 @@ Kakeibo · HTML
       <button class="btn-primary" onclick="importFromText()" style="background:var(--surface);border:1px solid var(--accent2);color:var(--accent2);">✅ 貼り付けたデータで復元</button>
       <div id="importMsg" style="font-size:13px;text-align:center;padding:8px;display:none;border-radius:8px;margin-top:8px"></div>
     </div>
- 
+
     <button class="btn-secondary" onclick="closeModal('backup')">閉じる</button>
   </div>
 </div>
- 
+
 <!-- Budget modal (bidirectional + default) -->
 <div class="overlay" id="budgetOverlay">
   <div class="sheet">
     <div class="sheet-title">予算を設定 <button class="close-btn" onclick="closeModal('budget')">×</button></div>
     <div class="sheet-sub" id="budgetSheetSub">今月：── 月（── 日間）</div>
- 
+
     <!-- 1日 → 月 -->
     <div class="calc-box">
       <div class="calc-box-title">1日いくら使う？ → 月予算を計算</div>
@@ -1467,7 +460,7 @@ Kakeibo · HTML
       </div>
       <button class="btn-primary" id="applyDailyBtn" style="display:none;margin-top:10px" onclick="applyFromDaily()">この月予算で設定</button>
     </div>
- 
+
     <!-- 月 → 1日 -->
     <div class="calc-box">
       <div class="calc-box-title">月予算を入力 → 1日いくら使えるか計算</div>
@@ -1481,9 +474,9 @@ Kakeibo · HTML
       </div>
       <button class="btn-primary" id="applyMonthlyBtn" style="display:none;margin-top:10px" onclick="applyFromMonthly()">この月予算で設定</button>
     </div>
- 
+
     <div class="divider"></div>
- 
+
     <!-- Default toggle -->
     <div class="toggle-row">
       <div>
@@ -1496,11 +489,11 @@ Kakeibo · HTML
       </label>
     </div>
     <div id="defaultPreview" style="display:none;font-size:12px;color:var(--accent);text-align:center;margin-bottom:12px;"></div>
- 
+
     <button class="btn-secondary" onclick="closeModal('budget')">閉じる</button>
   </div>
 </div>
- 
+
 <!-- Cat manager -->
 <div class="overlay" id="catOverlay">
   <div class="sheet">
@@ -1509,7 +502,7 @@ Kakeibo · HTML
     <button class="btn-primary" style="margin-top:16px" onclick="openAddCat()">＋ カテゴリを追加</button>
   </div>
 </div>
- 
+
 <!-- Add cat -->
 <div class="overlay" id="addCatOverlay">
   <div class="sheet">
@@ -1538,7 +531,7 @@ Kakeibo · HTML
     <button class="btn-secondary" onclick="backToCatManager()">戻る</button>
   </div>
 </div>
- 
+
 <!-- Edit cat -->
 <div class="overlay" id="editCatOverlay">
   <div class="sheet">
@@ -1567,7 +560,7 @@ Kakeibo · HTML
     <button class="btn-secondary" onclick="backToCatManager()">戻る</button>
   </div>
 </div>
- 
+
 <!-- Receipt scan modal -->
 <div class="overlay" id="scanOverlay">
   <div class="sheet">
@@ -1594,7 +587,7 @@ Kakeibo · HTML
     <button class="btn-secondary" onclick="closeModal('scan')" style="margin-top:10px">キャンセル</button>
   </div>
 </div>
- 
+
 <script>
 const EMOJIS=[
   // 食事・飲み物
@@ -1621,7 +614,7 @@ const DEFAULT_CATS=[
   {id:'daily',name:'日用品',icon:'🛒',dailyTarget:500,budget:null},
   {id:'other',name:'その他',icon:'📦',dailyTarget:null,budget:null},
 ];
- 
+
 // ── STATE ──
 // ── STATE & STORAGE ──
 // Uses localStorage - data persists in the same browser/device.
@@ -1645,10 +638,10 @@ function loadInitialState(){
     useDefaultBudget:false,
   };
 }
- 
+
 let state=loadInitialState();
 let activeCard=null,editingCatId=null,addIcon='📦',editIcon='📦';
- 
+
 function saveState(){
   try{
     localStorage.setItem('kakeibo_v4',JSON.stringify(state));
@@ -1667,41 +660,41 @@ function getMonth(ym){
   }
   return state.months[ym];
 }
- 
+
 // ── DATE HELPERS ──
 function todayYM(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;}
 function fmtYM(ym){const[y,m]=ym.split('-');return `${y}年${parseInt(m)}月`;}
 function daysElapsed(ym){return ym!==todayYM()?daysInMonth(ym):new Date().getDate();}
 function daysInMonth(ym){const[y,m]=ym.split('-').map(Number);return new Date(y,m,0).getDate();}
 function fmt(n){return n.toLocaleString('ja-JP');}
- 
+
 // ── RENDER ──
 function render(){
   const ym=state.currentMonth,md=getMonth(ym);
   document.getElementById('monthBtn').textContent=fmtYM(ym);
- 
+
   const allSpent=md.entries.reduce((s,e)=>s+e.amount,0);
   const bgt=md.budget,rem=bgt!=null?bgt-allSpent:null;
   const pct=bgt?Math.min(100,allSpent/bgt*100):0;
- 
+
   document.getElementById('ovSpent').textContent=fmt(allSpent)+'円';
   document.getElementById('ovBudgetSub').textContent=bgt?`予算 ${fmt(bgt)}円`:'予算未設定';
- 
+
   const remEl=document.getElementById('ovRemain');
   if(rem!=null){
     remEl.textContent=fmt(Math.abs(rem))+'円';
     remEl.className='ov-value'+(pct>100?' danger':pct>80?' warn':' ok');
     document.getElementById('ovRemainSub').textContent=pct>100?'予算オーバー':`残り${Math.round(100-pct)}%`;
   }else{remEl.textContent='–';remEl.className='ov-value';document.getElementById('ovRemainSub').textContent='–';}
- 
+
   document.getElementById('ovPct').textContent=Math.round(pct)+'%';
   const bar=document.getElementById('ovBar');bar.style.width=pct+'%';
   bar.className='budget-fill'+(pct>100?' danger':pct>80?' warn':'');
- 
+
   // デフォルトバッジ
   const badge=document.getElementById('defaultBadge');
   badge.style.display=(state.useDefaultBudget&&state.defaultBudget)?'inline-block':'none';
- 
+
   // カテゴリ予算合計
   const catTotal=state.cats.reduce((s,c)=>s+(c.budget||0),0);
   const catTotalEl=document.getElementById('ovCatTotal');
@@ -1721,7 +714,7 @@ function render(){
     catDiffEl.textContent='–';catDiffEl.className='ov-value';
     catDiffSubEl.textContent=bgt?'カテゴリ予算を設定してください':'月予算を設定してください';
   }
- 
+
   // Cards
   const elapsed=daysElapsed(ym),cards=document.getElementById('cards');
   cards.innerHTML='';
@@ -1761,7 +754,7 @@ function render(){
     cards.appendChild(w);
     if(isActive)setTimeout(()=>document.getElementById('amt-'+cat.id)?.focus(),60);
   });
- 
+
   // History
   const histEl=document.getElementById('historyList');
   const sorted=[...md.entries].sort((a,b)=>b.ts-a.ts).slice(0,40);
@@ -1776,7 +769,7 @@ function render(){
     </div>`;
   }).join('');
 }
- 
+
 function toggleCard(id){activeCard=activeCard===id?null:id;render();}
 function addEntry(catId){
   const amtEl=document.getElementById('amt-'+catId),memoEl=document.getElementById('memo-'+catId);
@@ -1786,10 +779,10 @@ function addEntry(catId){
   saveState();amtEl.value='';memoEl.value='';render();
 }
 function deleteEntry(ts){const md=getMonth(state.currentMonth);md.entries=md.entries.filter(e=>e.ts!==ts);saveState();render();}
- 
+
 // ── EDIT ENTRY ──
 let editingEntryTs=null;
- 
+
 function openEditEntry(ts){
   // Find entry across all months
   let entry=null, entryMonth=null;
@@ -1799,21 +792,21 @@ function openEditEntry(ts){
   }
   if(!entry) return;
   editingEntryTs=ts;
- 
+
   // Set date input
   const d=new Date(ts);
   const dateStr=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
   document.getElementById('editEntryDate').value=dateStr;
   document.getElementById('editEntryAmount').value=entry.amount;
   document.getElementById('editEntryMemo').value=entry.memo||'';
- 
+
   // Populate category select
   const sel=document.getElementById('editEntryCat');
   sel.innerHTML=state.cats.map(c=>`<option value="${c.id}"${c.id===entry.cat?' selected':''}>${c.icon} ${c.name}</option>`).join('');
- 
+
   openModal('editEntry');
 }
- 
+
 function saveEditEntry(){
   if(!editingEntryTs) return;
   const dateVal=document.getElementById('editEntryDate').value;
@@ -1821,27 +814,27 @@ function saveEditEntry(){
   const catId=document.getElementById('editEntryCat').value;
   const memo=document.getElementById('editEntryMemo').value.trim();
   if(!dateVal||!amount||amount<=0) return;
- 
+
   // Remove old entry from its month
   for(const [ym,md] of Object.entries(state.months)){
     const idx=md.entries.findIndex(e=>e.ts===editingEntryTs);
     if(idx>=0){ md.entries.splice(idx,1); break; }
   }
- 
+
   // Create new ts from selected date, keeping original time
   const oldDate=new Date(editingEntryTs);
   const [y,m,d]=dateVal.split('-').map(Number);
   const newDate=new Date(y,m-1,d,oldDate.getHours(),oldDate.getMinutes(),oldDate.getSeconds());
   const newTs=newDate.getTime();
- 
+
   // Add to correct month
   const newYM=`${y}-${String(m).padStart(2,'0')}`;
   const newMd=getMonth(newYM);
   newMd.entries.push({cat:catId,amount,memo,ts:newTs});
- 
+
   // If month changed, switch to that month
   if(newYM!==state.currentMonth) state.currentMonth=newYM;
- 
+
   saveState(); render();
   closeModal('editEntry');
   editingEntryTs=null;
@@ -1857,10 +850,10 @@ function nextMonth(){
   activeCard=null;render();
 }
 function cycleMonth(){nextMonth();}
- 
+
 // ── BUDGET MODAL ──
 let _pendingDailyBudget=null,_pendingMonthlyBudget=null;
- 
+
 function openBudgetModal(){
   const ym=state.currentMonth;
   const days=daysInMonth(ym);
@@ -1879,7 +872,7 @@ function openBudgetModal(){
   if(md.budget||state.defaultBudget) calcFromMonthly();
   openModal('budget');
 }
- 
+
 function calcFromDaily(){
   const daily=parseInt(document.getElementById('dailyInput').value);
   const days=daysInMonth(state.currentMonth);
@@ -1892,7 +885,7 @@ function calcFromDaily(){
   btn.style.display='block';
   btn.textContent=`月予算 ${fmt(monthly)}円 で設定`;
 }
- 
+
 function calcFromMonthly(){
   const monthly=parseInt(document.getElementById('monthlyInput').value);
   const days=daysInMonth(state.currentMonth);
@@ -1905,10 +898,10 @@ function calcFromMonthly(){
   btn.style.display='block';
   btn.textContent=`月予算 ${fmt(monthly)}円 で設定`;
 }
- 
+
 function applyFromDaily(){applyBudget(_pendingDailyBudget);}
 function applyFromMonthly(){applyBudget(_pendingMonthlyBudget);}
- 
+
 function applyBudget(amount){
   if(!amount)return;
   getMonth(state.currentMonth).budget=amount;
@@ -1916,7 +909,7 @@ function applyBudget(amount){
   saveState();render();
   closeModal('budget');
 }
- 
+
 function onDefaultToggle(){
   state.useDefaultBudget=document.getElementById('defaultToggle').checked;
   // 現在の月予算をデフォルトに設定
@@ -1924,7 +917,7 @@ function onDefaultToggle(){
   if(state.useDefaultBudget&&md.budget){state.defaultBudget=md.budget;}
   saveState();updateDefaultPreview();render();
 }
- 
+
 function updateDefaultPreview(){
   const prev=document.getElementById('defaultPreview');
   if(state.useDefaultBudget&&state.defaultBudget){
@@ -1935,7 +928,7 @@ function updateDefaultPreview(){
     prev.textContent='上で予算を設定してから有効になります';
   }else{prev.style.display='none';}
 }
- 
+
 // ── CAT MANAGER ──
 function openCatManager(){renderCatList();openModal('cat');}
 function renderCatList(){
@@ -1984,7 +977,7 @@ function resetCatCalcUI(mode){
   document.getElementById(prefix+'DailyResult').innerHTML='<span style="color:var(--muted);font-size:13px">入力すると月予算を自動計算</span>';
   document.getElementById(prefix+'MonthlyResult').innerHTML='<span style="color:var(--muted);font-size:13px">入力すると1日あたりを自動計算</span>';
 }
- 
+
 function openAddCat(){addIcon='📦';document.getElementById('addCatName').value='';document.getElementById('addCatTarget').value='';document.getElementById('addCatBudget').value='';resetCatCalcUI('add');buildGrid('addEmojiGrid','add');closeModal('cat');openModal('addCat');}
 function saveNewCat(){
   const name=document.getElementById('addCatName').value.trim();if(!name){document.getElementById('addCatName').focus();return;}
@@ -2016,7 +1009,7 @@ function buildGrid(gridId,mode){
   document.getElementById(gridId).innerHTML=EMOJIS.map(e=>`<div class="emoji-opt${e===cur?' sel':''}" onclick="pickEmoji('${e}','${mode}','${gridId}')">${e}</div>`).join('');
 }
 function pickEmoji(e,mode,gridId){if(mode==='add')addIcon=e;else editIcon=e;buildGrid(gridId,mode);}
- 
+
 // ── RECEIPT SCAN ──
 let currentImageBase64=null;
 function openScanModal(){
@@ -2075,7 +1068,7 @@ function confirmScanEntry(){
   getMonth(state.currentMonth).entries.push({cat:catId,amount,memo,ts:Date.now()});
   saveState();render();closeModal('scan');
 }
- 
+
 // ── MODAL HELPERS ──
 function openModal(id){document.getElementById(id+'Overlay').classList.add('show');}
 function closeModal(id){document.getElementById(id+'Overlay').classList.remove('show');}
@@ -2086,10 +1079,10 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Enter'&&activeCard)addEntry(activeCard);
   if(e.key==='Escape'){['budget','cat','addCat','editCat','scan'].forEach(closeModal);activeCard=null;render();}
 });
- 
+
 // ── ANALYTICS ──
 let analyticsYM = todayYM();
- 
+
 function analyticsPrevMonth(){
   const[y,m]=analyticsYM.split('-').map(Number);
   analyticsYM=m===1?`${y-1}-12`:`${y}-${String(m-1).padStart(2,'0')}`;
@@ -2100,11 +1093,11 @@ function analyticsNextMonth(){
   analyticsYM=m===12?`${y+1}-01`:`${y}-${String(m+1).padStart(2,'0')}`;
   renderAnalytics();
 }
- 
+
 function renderAnalytics(){
   const ym=analyticsYM, md=getMonth(ym);
   document.getElementById('analyticsMonthLabel').textContent=fmtYM(ym);
- 
+
   const entries=md.entries;
   const totalSpent=entries.reduce((s,e)=>s+e.amount,0);
   const budget=md.budget;
@@ -2112,15 +1105,15 @@ function renderAnalytics(){
   const totalDays=daysInMonth(ym);
   const dailyAvg=elapsed>0?Math.round(totalSpent/elapsed):0;
   const projectedTotal=Math.round(dailyAvg*totalDays);
- 
+
   // Category breakdown
   const catTotals=state.cats.map(cat=>{
     const total=entries.filter(e=>e.cat===cat.id).reduce((s,e)=>s+e.amount,0);
     return{...cat,total};
   }).filter(c=>c.total>0).sort((a,b)=>b.total-a.total);
- 
+
   const maxCatTotal=catTotals[0]?.total||1;
- 
+
   // Past 6 months trend
   const months=[];
   for(let i=5;i>=0;i--){
@@ -2132,7 +1125,7 @@ function renderAnalytics(){
     months.push({ym:mym,total:mTotal,label:`${d.getMonth()+1}月`});
   }
   const maxMonthTotal=Math.max(...months.map(m=>m.total),1);
- 
+
   // Advice generation
   const advices=[];
   if(budget&&totalSpent>budget*0.8&&elapsed<totalDays*0.8)
@@ -2144,13 +1137,13 @@ function renderAnalytics(){
     advices.push(`「${topCat.name}」が支出全体の${Math.round(topCat.total/totalSpent*100)}%を占めています。`);
   if(advices.length===0&&totalSpent>0)
     advices.push('今月は順調なペースです！このまま続けましょう。');
- 
+
   // Render
   const CAT_COLORS=['#e8c84a','#4ae8a0','#e84a6a','#e8904a','#4a8ae8','#c84ae8','#4ae8c8'];
- 
+
   const pctUsed=budget?Math.round(totalSpent/budget*100):null;
   const remaining=budget?budget-totalSpent:null;
- 
+
   document.getElementById('analyticsContent').innerHTML=`
     <!-- Stats grid -->
     <div class="an-section">
@@ -2178,7 +1171,7 @@ function renderAnalytics(){
         </div>
       </div>
     </div>
- 
+
     <!-- Category breakdown -->
     <div class="an-section">
       <div class="an-title">カテゴリ別内訳</div>
@@ -2198,7 +1191,7 @@ function renderAnalytics(){
         }).join('')
       }
     </div>
- 
+
     <!-- 6-month trend -->
     <div class="an-section">
       <div class="an-title">過去6ヶ月の推移</div>
@@ -2214,7 +1207,7 @@ function renderAnalytics(){
         }).join('')}
       </div>
     </div>
- 
+
     <!-- Advice -->
     <div class="an-section">
       <div class="an-title">💡 アドバイス</div>
@@ -2222,7 +1215,7 @@ function renderAnalytics(){
     </div>
   `;
 }
- 
+
 // ── TAB SWITCHING ──
 function switchTab(name){
   document.querySelectorAll('.tab-page').forEach(p=>p.classList.remove('active'));
@@ -2232,11 +1225,11 @@ function switchTab(name){
   if(name==='cal'){calYM=state.currentMonth;selectedDay=null;renderCalendar();}
   if(name==='analytics'){analyticsYM=state.currentMonth;renderAnalytics();}
 }
- 
+
 // ── CALENDAR ──
 let calYM = todayYM();
 let selectedDay = null;
- 
+
 function calPrevMonth(){
   const [y,m]=calYM.split('-').map(Number);
   calYM=m===1?`${y-1}-12`:`${y}-${String(m-1).padStart(2,'0')}`;
@@ -2247,18 +1240,18 @@ function calNextMonth(){
   calYM=m===12?`${y+1}-01`:`${y}-${String(m+1).padStart(2,'0')}`;
   selectedDay=null; renderCalendar();
 }
- 
+
 function renderCalendar(){
   const ym=calYM, md=getMonth(ym);
   const [y,m]=ym.split('-').map(Number);
   document.getElementById('calMonthLabel').textContent=fmtYM(ym);
- 
+
   // summary
   const totalSpent=md.entries.reduce((s,e)=>s+e.amount,0);
   const elapsed=daysElapsed(ym);
   document.getElementById('calTotalSpent').textContent=fmt(totalSpent)+'円';
   document.getElementById('calDailyAvg').textContent=fmt(elapsed>0?Math.round(totalSpent/elapsed):0)+'円';
- 
+
   // Build day → entries map
   const dayMap={};
   md.entries.forEach(e=>{
@@ -2269,20 +1262,20 @@ function renderCalendar(){
       dayMap[day].push(e);
     }
   });
- 
+
   // avg daily for color coding
   const avgDaily=elapsed>0?totalSpent/elapsed:0;
- 
+
   // Render cells
   const firstDay=new Date(y,m-1,1).getDay(); // 0=Sun
   const totalDays=daysInMonth(ym);
   const today=new Date();
   const isThisMonth=ym===todayYM();
- 
+
   let cells='';
   // Empty leading cells
   for(let i=0;i<firstDay;i++) cells+=`<div class="cal-cell empty-day"></div>`;
- 
+
   for(let day=1;day<=totalDays;day++){
     const dow=(firstDay+day-1)%7;
     const dowCls=dow===0?'sun':dow===6?'sat':'';
@@ -2290,7 +1283,7 @@ function renderCalendar(){
     const entries=dayMap[day]||[];
     const total=entries.reduce((s,e)=>s+e.amount,0);
     const isSelected=selectedDay===day;
- 
+
     let amountHtml='';
     let dotHtml='';
     if(total>0){
@@ -2306,26 +1299,26 @@ function renderCalendar(){
       }).join('');
       dotHtml=`<div class="cal-dots">${dots}</div>`;
     }
- 
+
     cells+=`<div class="cal-cell ${dowCls}${isToday?' today':''}${isSelected?' selected':''}" onclick="selectDay(${day})">
       <div class="cal-day-num">${day}</div>
       ${amountHtml}${dotHtml}
     </div>`;
   }
   document.getElementById('calCells').innerHTML=cells;
- 
+
   // Re-render detail if day selected
   if(selectedDay) showDayDetail(selectedDay);
   else closeDayDetail();
 }
- 
+
 function selectDay(day){
   if(selectedDay===day){selectedDay=null;closeDayDetail();renderCalendar();return;}
   selectedDay=day;
   renderCalendar();
   showDayDetail(day);
 }
- 
+
 function showDayDetail(day){
   const ym=calYM, md=getMonth(ym);
   const [y,m]=ym.split('-').map(Number);
@@ -2333,11 +1326,11 @@ function showDayDetail(day){
     const d=new Date(e.ts);
     return d.getFullYear()===y&&d.getMonth()+1===m&&d.getDate()===day;
   }).sort((a,b)=>a.ts-b.ts);
- 
+
   document.getElementById('dayDetailTitle').textContent=`${m}月${day}日の支出`;
   const total=entries.reduce((s,e)=>s+e.amount,0);
   document.getElementById('dayDetailTotal').textContent=fmt(total)+'円';
- 
+
   if(!entries.length){
     document.getElementById('dayDetailItems').innerHTML='<div style="color:var(--muted);font-size:13px;padding:8px 0">支出なし</div>';
   }else{
@@ -2358,21 +1351,21 @@ function showDayDetail(day){
   // scroll to detail
   setTimeout(()=>document.getElementById('dayDetail').scrollIntoView({behavior:'smooth',block:'nearest'}),50);
 }
- 
+
 function closeDayDetail(){
   document.getElementById('dayDetail').classList.remove('show');
 }
- 
+
 // Sync calendar month with home month when switching tabs
 const origSwitchTab=switchTab;
- 
+
 // ── BACKUP / EXPORT / IMPORT ──
 function openBackupModal(){
   document.getElementById('importMsg').style.display='none';
   document.getElementById('importTextarea').value='';
   openModal('backup');
 }
- 
+
 async function copyBackup(){
   const json=JSON.stringify(state);
   const btn=document.getElementById('copyBackupBtn');
@@ -2390,11 +1383,11 @@ async function copyBackup(){
   }
   setTimeout(()=>btn.textContent='📋 バックアップをコピー',2500);
 }
- 
+
 function exportJSON(){
   copyBackup();
 }
- 
+
 async function exportCSV(){
   const BOM='﻿'; // UTF-8 BOM for Excel
   let rows=[['日付','時刻','カテゴリ','メモ','金額']];
@@ -2426,7 +1419,7 @@ async function exportCSV(){
     a.click(); URL.revokeObjectURL(url);
   }
 }
- 
+
 function importFromText(){
   const text=document.getElementById('importTextarea').value.trim();
   const msg=document.getElementById('importMsg');
@@ -2452,32 +1445,32 @@ function importFromText(){
     msg.textContent='エラー：形式が正しくありません。コピーし直してください。';
   }
 }
- 
+
 function importJSON(event){importFromText();}
- 
+
 // Register overlay close for backup
 document.getElementById('backupOverlay').addEventListener('click',e=>{
   if(e.target.id==='backupOverlay') closeModal('backup');
 });
- 
+
 // ── DRAG & DROP SORT ──
 let dragSrcId=null;
- 
+
 function initDragSort(){
   const cardsEl=document.getElementById('cards');
- 
+
   cardsEl.addEventListener('dragstart',e=>{
     const card=e.target.closest('.cat-card');if(!card)return;
     dragSrcId=card.dataset.catId;
     card.classList.add('dragging');
     e.dataTransfer.effectAllowed='move';
   });
- 
+
   cardsEl.addEventListener('dragend',e=>{
     document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('dragging','drag-over'));
     dragSrcId=null;
   });
- 
+
   cardsEl.addEventListener('dragover',e=>{
     e.preventDefault();e.dataTransfer.dropEffect='move';
     const card=e.target.closest('.cat-card');
@@ -2485,11 +1478,11 @@ function initDragSort(){
     document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('drag-over'));
     card.classList.add('drag-over');
   });
- 
+
   cardsEl.addEventListener('dragleave',e=>{
     const card=e.target.closest('.cat-card');if(card)card.classList.remove('drag-over');
   });
- 
+
   cardsEl.addEventListener('drop',e=>{
     e.preventDefault();
     const card=e.target.closest('.cat-card');
@@ -2503,10 +1496,10 @@ function initDragSort(){
     cats.splice(toIdx,0,moved);
     saveState();render();
   });
- 
+
   // Touch support (mobile)
   let touchDragId=null,touchClone=null,touchOffsetX=0,touchOffsetY=0;
- 
+
   cardsEl.addEventListener('touchstart',e=>{
     const handle=e.target.closest('.drag-handle');if(!handle)return;
     const card=handle.closest('.cat-card');if(!card)return;
@@ -2520,7 +1513,7 @@ function initDragSort(){
     document.body.appendChild(touchClone);
     card.classList.add('dragging');
   },{passive:true});
- 
+
   cardsEl.addEventListener('touchmove',e=>{
     if(!touchDragId||!touchClone)return;
     e.preventDefault();
@@ -2535,7 +1528,7 @@ function initDragSort(){
     document.querySelectorAll('.cat-card').forEach(c=>c.classList.remove('drag-over'));
     if(overCard&&overCard.dataset.catId!==touchDragId)overCard.classList.add('drag-over');
   },{passive:false});
- 
+
   cardsEl.addEventListener('touchend',e=>{
     if(!touchDragId)return;
     if(touchClone){touchClone.remove();touchClone=null;}
@@ -2553,10 +1546,9 @@ function initDragSort(){
     touchDragId=null;
   });
 }
- 
+
 initDragSort();
 render();
 </script>
 </body>
 </html>
- 
